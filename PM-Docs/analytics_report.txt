@@ -1,0 +1,6 @@
+Analytics Summary - Last Quarter
+
+Post-UI overhaul:
+- Drop in user engagement by 15%
+- Increased confusion reported in user surveys around medical terms
+- Quiz completion rate dropped to 42%
