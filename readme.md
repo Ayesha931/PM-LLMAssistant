@@ -10,7 +10,7 @@
 
 An intelligent project management assistant designed to **save project managers' time**, **enhance decision-making quality**, and **build trust in AI** for strategic planning. PM-LLMAssistant leverages **Retrieval-Augmented Generation (RAG)** and **Chain-of-Thought (CoT)** reasoning to provide context-rich, reasoned responses based on company documents.  
 
-🔗 **[Demo Video](https://drive.google.com/file/d/1Yk8uPtd0279bkissONHwN5cmqU4g12SH/view?usp=sharing)** | 📂 **[Repository](https://github.com/Ayesha931/PM_ReasoningAssitant/tree/main/Final)**  
+🔗 **[Demo Video](https://drive.google.com/file/d/1Yk8uPtd0279bkissONHwN5cmqU4g12SH/view?usp=sharing)** | 📂 **[Repository](https://https://github.com/Ayesha931/PM-LLMAssistant)**  
 
 ---
 
