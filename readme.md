@@ -98,7 +98,8 @@ Based on the extracted context, the assistant might identify relevant company go
 - **Broader Scope**: Expand beyond routine project management to include strategic, operational, and risk management decisions.  
 - **Advanced Reasoning**: Fine-tune CoT prompts for more precise, domain-specific reasoning.  
 - **Reduced AI Dependency**: Implement checks to prevent over-reliance on AI, maintaining human oversight in critical decisions.  
-- **Enhanced Data Privacy**: Move towards local model deployment to address data security concerns.  
+- **Enhanced Data Privacy**: Move towards local model deployment to address data security concerns.
+- **Cross-Project Ingestion & Multi-Tasking Support**: Expand the database query scope to allow project managers to cross-reference insights and track deliverables across multiple concurrent projects simultaneously, rather than processing a single project lifecycle at a time.
 
 ---
 
