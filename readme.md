@@ -2,9 +2,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue)  
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.24-red)  
 ![FAISS](https://img.shields.io/badge/FAISS-1.7.3-green)  
-![Deepseek R1](https://img.shields.io/badge/Deepseek%20R1-CoT%20Reasoning-orange)  
-![Status](https://img.shields.io/badge/Status-Active-brightgreen)  
-![License](https://img.shields.io/badge/License-None-lightgrey)  
+![Deepseek R1](https://img.shields.io/badge/Deepseek%20R1-CoT%20Reasoning-orange) 
 
 ---
 
@@ -16,11 +14,11 @@ An intelligent project management assistant designed to **save project managers'
 
 ## 🌟 Key Features  
 
-- 🗂 **Efficient Context Retrieval**: Automates context retrieval using RAG to save PMs from manually searching for documents.  
+- 🗂 **Automated RAG Pipeline**: Orchestrates an automated text parsing and context discovery engine, eliminating manual search overhead by executing dense vector lookups  
 - 🧠 **Strategic Decision Support**: Provides context-aware, reasoned responses using CoT via Deepseek R1 distilled LLaMA.  
 - 📁 **Multi-Project Support**: Handles multiple projects, each with unique contexts.  
 - 🛠️ **Customizable Prompt Templates**: Trigger reasoned responses tailored to specific project management scenarios.  
-- 🛡️ **Off-Topic Guardrail**: Prevents responses to out-of-scope queries, keeping the assistant focused on project management tasks.
+- 🛡️ **Semantic Operations Guardrail**: Implements an asynchronous validation layer using LLMs to programmatically intercept off-topic queries and enforce safe operational boundaries.
 
 ---
 
@@ -28,15 +26,15 @@ An intelligent project management assistant designed to **save project managers'
 
 PM-LLMAssistant/
 
-├── 📁 PM-Docs/                 # Project-specific context files (PDF, DOCX, TXT)
+├── 📁 PM-Docs/                 # Project-specific context files (PDF, TXT, MD, JSON)
 
-├── 📁 faiss_index/             # Serialized FAISS index for semantic retrieval
+├── 📁 vectorstore/             # Serialized FAISS index for semantic retrieval and metadata files saved from embedding
 
 ├── 📄 requirements.txt         # Python dependencies
 
 ├── 🖥️ app.py                   # Main Streamlit app
 
-├── 📝 build_index_and_generate_context.py  # Embedding and context generation scripts
+├── 📄 decision_logs_main2.csv  # Logs all the engineered prompts sent by app to model and the received final response as well as the COT chain of the model.
 
 └── 📄 README.md                # Project documentation
 
@@ -46,8 +44,8 @@ PM-LLMAssistant/
 ## 🚀 How It Works  
 
 ### 1. 📥 Context Ingestion  
-- Extracts project data from various file formats (PDF, DOCX, TXT) in the `PM-Docs` folder.  
-- Embeds this data using a hosted `paraphrase-mpnet-base-v2` model for semantic understanding.  
+- Extracts project data from various file formats (PDF, TXT, MD, JSON) in the `PM-Docs` folder.  
+- Embeds this data using a localized all-MiniLM-L6-v2 model for semantic understanding.  
 - Builds a FAISS index for efficient retrieval.  
 
 ### 2. 🔎 Real-Time Context Retrieval  
@@ -78,7 +76,8 @@ Based on the extracted context, the assistant might identify relevant company go
 
 ### RAG (Retrieval-Augmented Generation)  
 - Uses FAISS for fast similarity search against document embeddings.  
-- Automates the retrieval of relevant context, ensuring that responses are well-informed.  
+- Automates the retrieval of relevant context, ensuring that responses are well-informed.
+- Tensor-Level Optimization: Implements custom PyTorch mean pooling with attention masking to mathematically eliminate useless text padding, ensuring high-fidelity semantic indexing within FAISS.
 
 ### CoT (Chain-of-Thought)  
 - Deepseek's reasoning model (R1 distilled LLaMA) is prompted to generate intermediate reasoning steps.  
@@ -86,11 +85,11 @@ Based on the extracted context, the assistant might identify relevant company go
 
 ---
 
-## 🚧 Known Limitations  
+## 🚧 Architectural Constraints  
 
 1. **Scope Restriction**: Focused on routine project management tasks.  
 2. **Limited Use Case**: Built around a single dummy use case due to time constraints.  
-3. **Budget Constraints**: Uses only open-source models; lacks enterprise-grade LLMs.  
+3. **Insulated Compute Stack**: Built entirely around highly efficient, open-source models to ensure low deployment footprints and optimal resource utilization.
 
 ---
 
